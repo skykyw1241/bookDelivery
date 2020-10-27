@@ -26,15 +26,15 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
                 value:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-      bindings:
-        rentSaved-in:
-          group: rental
-          destination: rental
-          contentType: application/json
-        rentSaved-out:
-          destination: rental
-          contentType: application/json
-#        bookSaved-in:
+    bindings:
+       rentSaved-in:
+         group: rental
+         destination: rental
+         contentType: application/json
+       rentSaved-out:
+         destination: rental
+         contentType: application/json
+#      bookSaved-in:
           #          group: book
           #destination: book
           #contentType: application/json

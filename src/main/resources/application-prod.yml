@@ -10,26 +10,19 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-logging:
-  level:
-    org.hibernate.type: trace
-    org.springframework.cloud: debug
-server:
-  port: 8080
-
-cloud:
-  stream:
-    kafka:
-      binder:
-        brokers: 10.0.22.22:9092
-      streams:
+  cloud:
+    stream:
+      kafka:
         binder:
-          configuration:
-            default:
-              key:
-                serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-              value:
-                serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+          brokers: 10.0.22.22:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
     bindings:
       rentSaved-in:
         group: rental
@@ -59,3 +52,9 @@ cloud:
       #deliveryCanceled-out:
       #  destination: delivery
       #  contentType: application/json
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8080
