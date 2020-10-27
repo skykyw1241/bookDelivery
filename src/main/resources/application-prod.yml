@@ -14,7 +14,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 10.0.22.22:9092
+          brokers: 10.0.21.169:9092
         streams:
           binder:
             configuration:
@@ -23,35 +23,21 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
                 value:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-    bindings:
-      rentSaved-in:
-        group: rental
-        destination: rental
-        contentType: application/json
-      rentSaved-out:
-        destination: rental
-        contentType: application/json
-      deliveryCreated-in:
-        group: delivery
-        destination: delivery
-        contentType: application/json
-      deliveryCreated-out:
-        destination: delivery
-        contentType: application/json
-        #        bookSaved-in:
-        #          group: book
-        #destination: book
-        #contentType: application/json
-        #bookSaved-out:
-        #destination: book
-        #contentType: application/json
-      #deliveryCanceled-in:
-      #  group: delivery
-      #  destination: delivery
-      #  contentType: application/json
-      #deliveryCanceled-out:
-      #  destination: delivery
-      #  contentType: application/json
+      bindings:
+        rentSaved-in:
+          group: rental
+          destination: rental
+          contentType: application/json
+        rentSaved-out:
+          destination: rental
+          contentType: application/json
+        deliveryCreated-in:
+          group: delivery
+          destination: delivery
+          contentType: application/json
+        deliveryCreated-out:
+          destination: delivery
+          contentType: application/json
 logging:
   level:
     org.hibernate.type: trace
